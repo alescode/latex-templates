@@ -153,7 +153,7 @@
 \supervisor  {Michael Doggett}
 \examiner    {}
 \degree      {}
-\authors     {Juan Mártinez, Gustavo Torres}
+\authors     {@autor1, @autor2}
 \university  {\texorpdfstring{\href{http://www.usb.ve}
                 {Universidad Simón Bolívar}}
                 {Universidad Simón Bolívar}}
