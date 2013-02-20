@@ -1,0 +1,199 @@
+\documentclass[letterpaper, 12pt, oneside]{tesis}
+
+% Paquetes para idioma
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[fixlanguage]{babelbib}
+
+% Otros paquetes instalados
+% Básicos
+\usepackage{natbib}
+\usepackage{enumerate}
+
+% Para dibujar figuras
+\usepackage{tikz}
+
+% Para cambiar el color de las letras
+\usepackage{color}
+
+% Para incluir código (básico)
+\usepackage{verbatim}
+\usepackage{fancyvrb}
+
+% Para incluir hipervínculos
+\usepackage{hyperref}
+\hypersetup{urlcolor=blue, colorlinks=false}
+
+% Para más símbolos matemáticos
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+% Para colocar teoremas en cajas
+\usepackage{mdframed}
+
+% Para texto Lorem Ipsum
+\usepackage{blindtext}
+
+% Paquetes locales
+% Puedes agregar paquetes locales (archivos .sty) en un subdirectorio % 'paquetes'.
+% Utiliza la sintaxis \usepackage{paquetes/nombrePaquete}
+
+% Todas las imágenes se cargan del subdirectorio 'img' por defecto.
+\graphicspath{{img/}}
+
+% Sangrías de 3 espacios (3 veces el espacio de la x)
+\parindent 3ex 
+
+% Interlineado
+\setlength{\baselineskip}{1.5pt}
+
+% Interpárrafo
+\setlength{\parskip}{16.5pt}
+
+\topmargin 2cm
+
+\renewcommand{\tablename}{Tabla}
+\newcommand\listsymbolname{Acrónimos y Símbolos}
+
+\begin{titlepage}
+    \title{\vspace{-2cm} \includegraphics[width=1.2in]{./usb.png} \\[.2cm]
+        \large Universidad Simón Bolívar \\
+        Decanato de Estudios Profesionales \\
+        Coordinación de Ingeniería de la Computación
+        \vfill \LARGE @títuloProyecto \vfill}
+    \author{Por: \\
+        @autor1 \\
+        @autor2 \\[1.2cm]
+        Realizado con la asesoría de: \\
+        @tutor \\[1.2cm]
+        PROYECTO DE GRADO \\
+Presentado ante la Ilustre Universidad Simón Bolívar \\
+como requisito parcial para optar al título de \\
+Ingeniero de Computación}
+    \date{Sartenejas, @mes de @año}
+\end{titlepage}
+
+\begin{document}
+\frontmatter
+\maketitle
+\setstretch{1.3}
+
+% Se incluye el acta de evaluación, verificar que se corresponda
+% con el formato aceptado actualmente por el Decanato.
+\input{./partes/acta} 
+
+% El resumen debe ser de una sola página
+\addtotoc{Resumen}
+\abstract{
+\addtocontents{toc}{\vspace{1em}}
+\blindtext
+
+\blindtext
+
+% Las palabras clave son generalmente los nombres de áreas de investigación a
+% los cuales está asociado el trabajo. Generalmente son tres o cuatro.
+\noindent \begin{small} \textbf{Palabras clave}: @palabra1, @palabra2, @palabra3.
+\end{small}
+
+% Iniciar nueva página luego del resumen
+\clearpage
+\setstretch{1.3}
+
+% Agradecimientos
+\acknowledgements{
+\addtocontents{toc}{\vspace{1em}}
+\blindtext
+
+\blindtext
+}
+\clearpage
+
+\pagestyle{fancy}
+
+% Tabla de contenidos o índice
+\lhead{\emph{Índice General}}
+\tableofcontents
+
+% Estos índices solamente se usan si el libro contiene figuras, tablas y
+% algoritmos. Si alguno de estos no se utiliza, comentar o eliminar las líneas
+% pertinentes.
+\lhead{\emph{Índice de Figuras}}
+\listoffigures
+
+\lhead{\emph{Índice de Tablas}}
+\renewcommand*\listtablename{Índice de Tablas}
+\listoftables
+
+%\lhead{\emph{Índice de Algoritmos}}
+%\renewcommand*\listalgorithmname{Índice de algoritmos}
+%\listofalgorithms
+
+\setstretch{1.5}
+\clearpage
+\lhead{\emph{Acrónimos y símbolos}}
+\listofsymbols{ll}
+{
+
+    % Aquí van las siglas
+    \textbf{SIGLAS} & \textbf{S}iglas \textbf{I}sla \textbf{G}rafo 
+                      \textbf{L}aos \textbf{A}ve \textbf{S}erpiente\\
+    \textbf{ACM} & \textbf{A}ssociation for \textbf{C}omputing \textbf{M}achinery\\
+    &\\
+    \hline
+    &\\
+
+    % Aquí van los símbolos
+    $\iff$ & doble implicación, si y sólo si\\
+    $\Rightarrow$ & implicación lógica\\
+    $[u:=v]$ & sustitución textual de $u$ por $v$
+}
+
+%% ----------------------------------------------------------------
+% End of the pre-able, contents and lists of things
+% Begin the Dedication page
+
+\setstretch{1.3}  % Return the line spacing back to 1.3
+
+\pagestyle{empty}  % Page style needs to be empty for this page
+
+\dedicatory{
+    \textbf{Dedicatoria} \bigskip
+
+    A @personasImportantes, por @razonesDedicatoria.
+}
+
+\addtocontents{toc}{\vspace{2em}}
+
+\mainmatter
+\pagestyle{fancy}
+
+% Se incluye el cuerpo de la tesis en este documento.
+
+\input{./partes/introduccion}
+
+% El número de capítulos varía. En mi libro fueron cuatro (sin contar
+% introducción y conclusión).
+\input{./partes/capitulo1}
+\input{./partes/capitulo2}
+\input{./partes/capitulo3}
+\input{./partes/capitulo4}
+
+\input{./partes/conclusiones}
+
+% El estilo de la bibliografía es AAAI, definido en el archivo aaai.bst.
+\label{Bibliography}
+\bibliography{bibliografia}
+\lhead{\emph{Bibliografía}}
+\bibliographystyle{aaai}
+\addtocontents{toc}{\vspace{2em}}
+
+% Apéndices
+\appendix
+\input{./partes/apendiceA}
+\input{./partes/apendiceB}
+\addtocontents{toc}{\vspace{2em}}
+
+\backmatter
+
+\end{document}

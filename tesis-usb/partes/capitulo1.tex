@@ -1,0 +1,119 @@
+\chapter{@nombreCapítulo}
+\label{capitulo1}
+\lhead{Capítulo 1. \emph{@nombreCapítulo}}
+
+% De qué va a tratar el capítulo
+% El capítulo 1 suele ser el marco teórico.
+
+\section{@sección}
+\begin{definition}
+\label{definicion1}
+\blindtext, donde:
+\begin{itemize} 
+\item $X$ es $\gamma - 2$.
+\item $A$ es un conjunto de \textbf{cosas}.
+\end{itemize}
+\end{definition}
+
+La Figura \ref{usb} muestra el símbolo de nuestra universidad.
+\begin{figure}[h!]
+\centering
+\includegraphics[width=0.4\textwidth]{usb.png}
+\caption[La popular \textit{cebolla}]{La popular \textit{cebolla}, símbolo de la USB.}
+\label{usb}
+\end{figure}
+
+\begin{verbatim}
+para escribir código
+    básico
+\end{verbatim}
+\Blindtext
+
+\begin{Verbatim}[commandchars=\\\{\}, codes={\catcode`$=3\catcode`^=7}]
+var x = 21;
+if (esto_es_código) {
+    imprimir(foo);
+}
+(lisp (listas (?paréntesis))
+\end{Verbatim}
+
+\blindtext
+\subsection{@subSección}
+\Blindtext
+
+\section{@sección}
+\blindtext
+
+\begin{mdframed}
+\begin{theorem}
+\label{principal}
+\textbf{Propiedades formales}
+\blindenumerate
+\end{theorem}
+\end{mdframed}
+
+\subsection{@subsección}
+\subsubsection{@subsubsección}
+\blindenumerate
+
+La Figura \ref{grafo} lo muestra.
+
+\shorthandoff{<>."}
+\begin{figure}[h]
+\begin{center}
+\begin{tikzpicture}[shorten >=1pt, thick]%[shorten >=1pt,node distance=2cm,>=stealth',thick]
+  \node [shape=circle,fill=black,inner sep=1.5pt,label=below:$s$] (q0) at (0,0) {};
+  \node [shape=circle,fill=black,inner sep=1.5pt,label=below:$1$] (q1) at (2,0) {};
+  \node [shape=circle,fill=black,inner sep=1.5pt,label=below:$t$] (q2) at (4,0) {};
+  \path[->] (q0) edge (q1) (q1) edge (q2);
+\end{tikzpicture}
+\end{center}
+\caption[@descripcionCorta]{@descripcionLarga}
+\label{grafo}
+\end{figure}
+
+\begin{enumerate}[--]
+\item 1
+\item 2
+\item 3
+\end{enumerate}
+
+\begin{tabular}{ll}
+1 & 2\\ \hline
+1 & 2\\
+1 & 2\\
+\end{tabular}
+
+\blindtext. Tabla \ref{tabla:resultados}.
+
+\begin{figure}[h]
+\begin{alignat*}{1}
+A\   & \longrightarrow B \mid C\\
+\end{alignat*}
+\caption[Gramática]{Gramática de un lenguaje.}
+\label{gram}
+\end{figure}
+
+\blindtext
+\begin{table}[h!]
+\begin{center}
+\begin{tabular}{llllll}
+\multicolumn{4}{@{}c}{Nombre del experimento} \\
+\midrule
+              &    éxitos/intentos & tiempo (ms) & espacio (kB) \\
+\midrule
+instancia1          &        28/30 &    23 &       1.7 \\
+instancia2          &        50/70 &    12 &       32.7 \\
+\midrule
+\end{tabular}
+\end{center}
+\caption[Resultados X/Y]{Resultados de X para Y}
+\label{tabla:resultados}
+\end{table}
+
+\begin{equation}
+\label{eq}
+\Phi = (\forall x) (R x)
+\end{equation}
+
+En el Apéndice \ref{apendiceA} se encuentra.
