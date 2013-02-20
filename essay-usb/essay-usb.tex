@@ -1,0 +1,52 @@
+\documentclass[letterpaper,12pt]{article}
+
+\usepackage[spanish]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\DeclareGraphicsExtensions{.jpg,.pdf,.mps,.png}
+
+% Márgenes
+\usepackage[top=2cm, left=2cm, right=2cm, bottom=2cm]{geometry}
+
+% Interlineado
+\linespread{1.5}
+
+\usepackage{hyperref}
+
+% Times Roman
+\usepackage{mathptmx}
+
+\usepackage{natbib}
+\setcitestyle{super}
+
+\usepackage{blindtext}
+
+\linespread{1.0}\selectfont
+
+\begin{document}
+
+\title{Título del ensayo}
+\author{\normalsize{Alejandro Machado}}
+\date{\normalsize{\today}}
+\maketitle
+
+\thispagestyle{empty}
+\pagestyle{empty}
+
+Lorem ipsum \cite{rialp}. Además \footnote{Así se hace una nota al pie.}.
+
+\Blindtext
+
+\begin{thebibliography}{}
+    \bibitem{rialp}
+        \textbf{Nombre artículo}, Gran Enciclopedia Rialp. Ediciones Rialp,
+        Madrid 1991.
+    \bibitem{wiki}
+        ``Artículo'' (en línea), WIKIPEDIA, consultado el dd-mm-aaaa. \\
+        \url{http://es.wikipedia.org/wiki/*}
+    \bibitem{libro}
+        APELLIDO Nombre, \textbf{Título}, Ediciones *, Ciudad aaaa.
+\end{thebibliography}
+
+\end{document}
+
